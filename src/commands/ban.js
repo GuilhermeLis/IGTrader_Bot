@@ -14,10 +14,11 @@ export default async function ban(response) {
   const administrator = process.env.ADMINISTRATOR;
 
   // const { status } = await bot.getChatMember(chat.id, idc)
-  console.log(response)
+  // console.log(response)
+  console.log(chat_id, forward_from.id)
   const { member } = await bot.getChatMember(chat_id, forward_from.id)
-  console.log(administrator)
-  if (chat.id !== administrator) {
+  console.log(member)
+  if (chat.id != administrator) {
 
     const reply = "Você não tem permissão para usar essa função"
 

@@ -6,9 +6,9 @@
   "author": "Guilherme Lisboa",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build": "npm run start && node ./build/index.js",
+    "build": "npm run start && node ./build/serve.js",
     "start": "npm run clean && npm run build-babel",
-    "build-babel": "babel -d ./build ./index.js -s",
+    "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
     "dev": "nodemon --exec babel-node serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

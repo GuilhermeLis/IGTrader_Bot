@@ -3,10 +3,10 @@ import 'dotenv/config'
 
 let token;
 
-if (process.env.DESKTOP_SESSION === "deepin") {
-  token = process.env.DEV_TOKEN;
-} else {
+if (process.env.NODE_ENV === "production") {
   token = process.env.BUILD_TOKEN;
+} else {
+  token = process.env.DEV_TOKEN;
 }
 
 const bot = new TelegramBot(token, {

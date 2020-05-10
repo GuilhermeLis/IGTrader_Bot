@@ -1,27 +1,8 @@
-import TelegramBot from "node-telegram-bot-api";
-import 'dotenv/config'
-
-let token;
-
-if (process.env.DESKTOP_SESSION === "deepin") {
-  token = process.env.DEV_TOKEN;
-} else {
-  token = process.env.BUILD_TOKEN;
-}
-
-const bot = new TelegramBot(token, {
-  polling: true,
-});
-
-bot.onText(/\/start/, (msg, match) => {
+import { bot } from '#/config/bot'
+import start from '#/commands/start';
 
 
-  const chatId = msg.chat.id;
-  const resp = "Você está ativando o bot de gerencia do IGTrader 🚀💰"
-
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp);
-});
+bot.onText(/\/start/,start);
 
 function newMensagem(response) {
   const { id } = response.chat;

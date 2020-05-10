@@ -21,6 +21,8 @@ try {
   bot.on("new_chat_members", newUser);
 
 } catch (e) {
+  const administrator = process.env.ADMINISTRATOR/
+  bot.sendMessage(administrator, e)
   console.log(e);
 }
 

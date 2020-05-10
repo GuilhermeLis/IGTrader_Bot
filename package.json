@@ -4,6 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "author": "Guilherme Lisboa",
+  "publisher": "guilhermelis",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuilhermeLis/covidstore-web"
+  },
   "scripts": {
     "clean": "rm -rf build && mkdir build",
     "start": "node ./build/serve.js",

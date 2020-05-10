@@ -1,7 +1,7 @@
 {
   "name": "igtrader_bot",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "serve.js",
   "license": "MIT",
   "author": "Guilherme Lisboa",
   "publisher": "guilhermelis",

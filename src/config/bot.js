@@ -3,7 +3,7 @@ import 'dotenv/config'
 
 let token;
 
-if (process.env.NODE_ENV == "production") {
+if (process.env.NODE_ENV === "production") {
   token = process.env.BUILD_TOKEN;
 } else {
   token = process.env.DEV_TOKEN;

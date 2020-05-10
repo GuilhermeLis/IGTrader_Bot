@@ -9,12 +9,13 @@
     "build": "npm run start && node ./build/serve.js",
     "start": "npm run clean && npm run build-babel",
     "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
-    "dev": "nodemon --exec babel-node serve.js",
+    "dev": "nodemon --exec babel-node src/serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@std/esm": "^0.26.0",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "node-telegram-bot-api": "^0.40.0"
   },
   "devDependencies": {

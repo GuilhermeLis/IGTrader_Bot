@@ -1,7 +1,18 @@
 // import {TelegramBot} from 'node-telegram-bot-api'
 const TelegramBot = require('node-telegram-bot-api');
+require("dotenv").config();
 
-const token = "1246572158:AAFLv-CBbERI031otzQzM6tuWK-nsmvewyQ";
+let token;
+
+
+
+if (process.env.DESKTOP_SESSION === "deepin") {
+  token = process.env.DEV_TOKEN;
+} else {
+  token = process.env.BUILD_TOKEN;
+}
+
+// console.log(token)
 
 const bot = new TelegramBot(token, {
   polling: true

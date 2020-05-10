@@ -1,12 +1,16 @@
-import { bot } from '#/config/bot'
-export default function start(msg, match) {
+import { bot } from '~/config/bot'
 
+export default function start(mensagem) {
 
-    const chatId = msg.chat.id;
-    const resp = "Você está ativando o bot de gerencia do IGTrader 🚀💰"
+  const { from } = mensagem;
+  const chatId = mensagem.chat.id;
 
-    console.log(msg)
-    // send back the matched "whatever" to the chat
-    bot.sendMessage(chatId, resp);
+  if (from.username === "gui_lis"){
+    const reply = "Você está ativando o bot de gerencia do IGTrader 🚀💰"
+    bot.sendMessage(chatId, reply);
+  }else{
+    const reply = "Você não tem permissão de usar o bot"
+    bot.sendMessage(chatId, reply)
+  }
 
 }

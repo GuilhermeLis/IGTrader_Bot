@@ -1,18 +1,29 @@
 {
   "name": "igtrader_bot",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
   "author": "Guilherme Lisboa",
   "scripts": {
-    "build": "nodemon ./index.js",
-    "dev": "nodemon ./index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run start && node ./build/serve.js",
+    "start": "npm run clean && npm run build-babel",
+    "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
+    "dev": "nodemon --exec babel-node serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@std/esm": "^0.26.0",
+    "dotenv": "^8.2.0",
     "node-telegram-bot-api": "^0.40.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "babel-plugin-root-import": "^6.5.0",
+    "eslint": "^7.0.0",
     "nodemon": "^2.0.3"
   }
 }

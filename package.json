@@ -13,7 +13,7 @@
     "clean": "rm -rf build && mkdir build",
     "start": "babel-node src/serve.js",
     "build": "npm run clean && npm run build-babel",
-    "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
+    "build-babel": "npx babel ./src --out-dir ./build --copy-files",
     "dev": "nodemon --exec babel-node src/serve.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

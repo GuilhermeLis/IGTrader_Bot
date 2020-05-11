@@ -1,4 +1,4 @@
-import { bot } from '~/config/bot'
+import { bot,chat_id } from '~/config/bot'
 import 'dotenv/config'
 
 export default async function ban(response) {
@@ -14,7 +14,6 @@ export default async function ban(response) {
   }
 
   const { forward_from } = reply_to_message;
-  const chat_id = process.env.CHAT_ID;
 
   const administrator = process.env.ADMINISTRATOR;
 

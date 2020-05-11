@@ -2,7 +2,6 @@ import { bot } from '~/config/bot'
 import 'dotenv/config'
 
 export default async function ban(response) {
-
   const { from } = response;
   const { reply_to_message } = response;
   const { chat } = response;

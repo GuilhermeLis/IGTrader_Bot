@@ -1,7 +1,7 @@
 {
   "name": "igtrader_bot",
   "version": "0.0.1",
-  "main": "serve.js",
+  "main": "index.js",
   "license": "MIT",
   "author": "Guilherme Lisboa",
   "publisher": "guilhermelis",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "start": "node ./build/serve.js",
+    "start": "node ./build/index.js",
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
     "dev": "nodemon --exec babel-node src/serve.js",

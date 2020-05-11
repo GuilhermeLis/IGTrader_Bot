@@ -5,24 +5,17 @@ import help from '~/commands/help';
 import report from '~/commands/report';
 import status from '~/commands/status';
 import ban from '~/commands/ban';
+import info from '~/commands/info';
 
 import newUser from '~/actions/newUser';
 
-try {
+//Commands
+bot.onText(/\/start/, start);
+bot.onText(/\/help/, help);
+bot.onText(/\/report/, report);
+bot.onText(/\/status/, status);
+bot.onText(/\/ban/, ban);
+bot.onText(/\/info/, info)
 
-  //Commands
-  bot.onText(/\/start/, start);
-  bot.onText(/\/help/, help);
-  bot.onText(/\/report/, report);
-  bot.onText(/\/status/, status);
-  bot.onText(/\/ban/, ban);
-
-  // Actions
-  bot.on("new_chat_members", newUser);
-
-} catch (e) {
-  const administrator = process.env.ADMINISTRATOR/
-  bot.sendMessage(administrator, e)
-  console.log(e);
-}
-
+// Actions
+bot.on("new_chat_members", newUser);

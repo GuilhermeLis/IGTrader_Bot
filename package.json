@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "start": "babel-node serve.js",
+    "start": "babel-node src/serve.js",
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
     "dev": "nodemon --exec babel-node src/serve.js",
@@ -23,13 +23,13 @@
     "express": "^4.17.1",
     "node-telegram-bot-api": "^0.40.0",
     "@babel/core": "^7.9.6",
-    "@babel/node": "^7.8.7"
-  },
-  "devDependencies": {
-    "eslint": "^7.0.0",
-    "nodemon": "^2.0.3",
+    "@babel/node": "^7.8.7",
     "@babel/cli": "^7.8.4",
     "@babel/preset-env": "^7.9.6",
     "babel-plugin-root-import": "^6.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.0.0",
+    "nodemon": "^2.0.3"
   }
 }

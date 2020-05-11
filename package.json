@@ -11,7 +11,7 @@
   },
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "start": "node ./build/serve.js",
+    "start": "babel serve.js",
     "build": "npm run clean && npm run build-babel",
     "build-babel": "babel ./src --out-dir ./build --source-maps --copy-files",
     "dev": "nodemon --exec babel-node src/serve.js",
